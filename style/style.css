@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+:root {
+    --white: #F5F5F5;
+    --semi-dark: #262429;
+    --dark: #18181B;
+    --grey: #55505C;
+    --silver: #a8bfc9;
+    --dark-silver: #83959c;
+    --cyan: #19C7A9;
+    --cyan-hover: #77f3e0;
+    --lime: #84CC16;
+    --lime-hover: #bdfc5f;
+}
+
+* > * {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+/*  UTILITIES */
+
+body {
+    overflow: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+    color: #F5F5F5;
+}
+
+p {
+    font-weight: 400;
+}
+
+.main {
+    background: var(--dark);
+    height: 100vh;
+}
+
+
+/* GAME START */
+
+.game-start {
+    height: 100vh;
+    display: flex;
+    flex-direction: column; 
+    animation: fadeIn 1s ease-in-out;   
+}
+
+.logo-icon {
+    width: 100%;
+}
+
+.game-start h1 {
+    margin: 1rem 0 2rem 0;
+}
+
+.start-btn {
+    display: block;
+	width: 100%;
+	font-size: 2rem;
+	font-weight: 700;
+	color: var(--grey);
+	line-height: 2.5rem;
+	text-align: center;
+	padding: 2rem 5rem;
+	margin: 1rem 0;
+    border: none;
+	border-radius: 1.5rem;
+	transition: all 0.4s ease;
+    font-size: 1.2rem;
+}
+
+.cyan-btn {
+    background-color: var(--cyan);
+    box-shadow: inset 0 -0.4rem 0 var(--cyan);
+}
+
+.cyan-btn:hover {
+    background-color: var(--cyan-hover);
+    transform: translateY(-0.5rem);
+}
+
+.lime-btn {
+    background-color: var(--lime);
+    box-shadow: inset 0 -0.4rem 0 var(--lime)
+}
+
+.lime-btn:hover {
+    background-color: var(--lime-hover);
+    transform: translateY(0.5rem);
+}
+
+/* MARK SELECTION */
+
+.mark-selection {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;    
+}
+
+.mark-selection h1 {
+    margin: 2rem 0;
+}
+
+.game-start-choice {
+    background: var(--semi-dark);
+	padding: 2rem;
+	border-radius: 1.5rem;
+	box-shadow: inset 0 -0.8rem 0 var(--dark);
+    width: 50%;
+    text-align: center;
+}
+
+.game-start-marks {
+    padding: 0.9rem 0.8rem;
+	border-radius: 1rem;
+	display: flex;
+	height: 7rem;
+	align-items: center;
+	justify-content: space-between;
+    margin: 1rem 0;
+    background-color: var(--dark)
+}
+
+.game-start-x-mark,
+.game-start-o-mark {
+    position: relative;
+	width: 100%;
+	height: 100%;
+	border-radius: inherit;
+	transition: all 0.4s ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-basis: 50%;
+}
+
+.game-start-x-mark:hover,
+.game-start-o-mark:hover {
+    background-color: var(--semi-dark);
+	cursor: pointer;
+}
+
+.x-mark-icon {
+    width: 3rem;
+	height: 3rem;
+	fill: var(--cyan);
+}
+
+.o-mark-icon {
+    width: 3rem;
+	height: 3rem;
+	fill: var(--lime);
+}
+
+.game-start-x-mark.selected {
+    background-color: var(--cyan);
+}
+
+.game-start-o-mark.selected {
+    background-color: var(--lime);
+}
+
+.game-start-x-mark.selected > svg, .game-start-o-mark.selected > svg {
+    fill: var(--dark); 
+}
+
+/* GAMEPLAY */
+
+.hide {
+    display: none;
+}

@@ -1,21 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
 
 :root {
-    --white: #F5F5F5;
-    --semi-dark: #262429;
-    --dark: #18181B;
-    --grey: #55505C;
+    --dark: #1a2a33;
+    --dark-shadow: #10212a;
+    --semi-dark: #1f3641;
     --silver: #a8bfc9;
-    --dark-silver: #83959c;
-    --cyan: #19C7A9;
-    --cyan-hover: #77f3e0;
-    --lime: #84CC16;
-    --lime-hover: #bdfc5f;
+    --silver-hover: #dbe8ed;
+    --silver-shadow: #6b8997;
+    --light-blue: #31c3bd;
+    --light-blue-hover: #65e9e4;
+    --blue-shadow: #118c87;
+    --light-yellow: #f2b137;
+    --light-yellow-hover: #ffc860;
+    --yellow-shadow: #cc8b13;
 }
 
+
 * > * {
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
 }
 
 /*  UTILITIES */
@@ -24,151 +26,191 @@ body {
     overflow: hidden;
 }
 
-h1, h2, h3, h4 {
+h1 {
+    color: var(--silver);
+    font-size: 1.2rem!important;
+    text-transform: uppercase;
     font-weight: 700;
-    color: #F5F5F5;
+    margin: 0!important;
 }
 
-p {
-    font-weight: 400;
-}
+@keyframes fadeIn {
+    0% {
+      opacity: 0; }
+    100% {
+      opacity: 1; } }
 
 .main {
     background: var(--dark);
     height: 100vh;
 }
 
+.hide {
+    display: none;
+}
 
-/* GAME START */
+/* GAME START SECTION */
 
 .game-start {
-    height: 100vh;
-    display: flex;
-    flex-direction: column; 
-    animation: fadeIn 1s ease-in-out;   
+    flex-direction: column;
+    animation: fadeIn 1s ease-in-out;
 }
 
-.logo-icon {
-    width: 100%;
-}
-
-.game-start h1 {
-    margin: 1rem 0 2rem 0;
-}
-
-.start-btn {
-    display: block;
-	width: 100%;
-	font-size: 2rem;
-	font-weight: 700;
-	color: var(--grey);
-	line-height: 2.5rem;
-	text-align: center;
-	padding: 2rem 5rem;
-	margin: 1rem 0;
-    border: none;
-	border-radius: 1.5rem;
-	transition: all 0.4s ease;
-    font-size: 1.2rem;
-}
-
-.cyan-btn {
-    background-color: var(--cyan);
-    box-shadow: inset 0 -0.4rem 0 var(--cyan);
-}
-
-.cyan-btn:hover {
-    background-color: var(--cyan-hover);
-    transform: translateY(-0.5rem);
-}
-
-.lime-btn {
-    background-color: var(--lime);
-    box-shadow: inset 0 -0.4rem 0 var(--lime)
-}
-
-.lime-btn:hover {
-    background-color: var(--lime-hover);
-    transform: translateY(0.5rem);
-}
-
-/* MARK SELECTION */
-
-.mark-selection {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;    
-}
-
-.mark-selection h1 {
-    margin: 2rem 0;
+.logo img {
+    width: 80px;
+    height: 80px;
 }
 
 .game-start-choice {
-    background: var(--semi-dark);
-	padding: 2rem;
-	border-radius: 1.5rem;
-	box-shadow: inset 0 -0.8rem 0 var(--dark);
-    width: 50%;
-    text-align: center;
+    background-color: var(--semi-dark);
+    border-radius: 20px;
+    box-shadow: inset 0px -8px 0px var(--dark-shadow);
 }
 
 .game-start-marks {
-    padding: 0.9rem 0.8rem;
-	border-radius: 1rem;
-	display: flex;
-	height: 7rem;
-	align-items: center;
-	justify-content: space-between;
-    margin: 1rem 0;
-    background-color: var(--dark)
+    background-color: var(--dark);
+    border-radius: 20px;
+    justify-content: space-around;
 }
 
-.game-start-x-mark,
-.game-start-o-mark {
-    position: relative;
-	width: 100%;
-	height: 100%;
-	border-radius: inherit;
-	transition: all 0.4s ease;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-basis: 50%;
+.mark {
+    width: 45px;
+    height: 45px;
+    background-color: transparent!important;
+    fill: var(--silver-hover);
 }
 
-.game-start-x-mark:hover,
-.game-start-o-mark:hover {
+.mark-select {
+    width: 100%;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.selected {
+    background-color: var(--silver); 
+}
+
+.selected .mark {
+    fill: var(--semi-dark);
+}
+
+.game-start-buttons {
+    padding: 0!important;
+}
+
+.start-btn {
+    width: 100%;
+    border-radius: 15px;
+    height: 65px;
+    border: none;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: var(--dark);
+    font-size: 1.1rem;
+}
+
+.yellow-btn {
+    background-color: var(--light-yellow);
+    box-shadow: inset 0px -8px 0px var(--yellow-shadow);
+}
+
+.blue-btn {
+    background-color: var(--light-blue);
+    box-shadow: inset 0px -8px 0px var(--blue-shadow);
+}
+
+.yellow-btn:hover {
+    background-color: var(--light-yellow-hover);
+}
+
+.blue-btn:hover {
+    background-color: var(--light-blue-hover);
+}
+
+/* GAMEBOARD SECTION */
+
+.game-board-head {
+    justify-content: space-between;
+}
+
+.game-board {
+    padding-top: 0.5rem!important;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.game-board-turn {
     background-color: var(--semi-dark);
-	cursor: pointer;
+    border-radius: 8px;
+    width: 90px;
+    height: 42px;
+    margin-right: 40px!important;
+    justify-content: space-between;
+    padding: 0 15px;
+    box-shadow: inset 0px -5px 0px var(--dark-shadow);
 }
 
-.x-mark-icon {
-    width: 3rem;
-	height: 3rem;
-	fill: var(--cyan);
+.game-board-turn h1 {
+    font-size: 0.8rem!important;
 }
 
-.o-mark-icon {
-    width: 3rem;
-	height: 3rem;
-	fill: var(--lime);
+.mark-turn {
+    width: 15px;
+    height: 15px;
+    fill: var(--silver);
 }
 
-.game-start-x-mark.selected {
-    background-color: var(--cyan);
+.game-board-restart {
+    background-color: var(--silver);
+    border-radius: 5px;
+    box-shadow: inset 0px -4px 0px var(--silver-shadow);
+    padding: 0.6rem;
+    cursor: pointer;
 }
 
-.game-start-o-mark.selected {
-    background-color: var(--lime);
+.game-board-restart img {
+    width: 20px;
+    height: 20px;
 }
 
-.game-start-x-mark.selected > svg, .game-start-o-mark.selected > svg {
-    fill: var(--dark); 
+.cells {
+    justify-content: space-between;
 }
 
-/* GAMEPLAY */
+.cell {
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+    padding: 3rem;
+    background-color: var(--semi-dark);
+    box-shadow: inset 0px -8px 0px var(--dark-shadow);
+    margin: 0.5rem 0;
+}
 
-.hide {
-    display: none;
+@media only screen and (min-width: 767px) {
+    .logo img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .game-board-turn {
+        width: 128px;
+        height: 56px;
+        padding: 0.3rem 1.5rem 0.3rem 1rem;
+        margin-right: 60px!important;
+    }
+
+    .mark-turn {
+        width: 20px;
+        height: 20px;
+    }
+
+    .cell { 
+        width: 128px;
+        height: 128px;
+    }
+
+    .game-board-turn h1 {
+        font-size: 0.9rem!important;
+    }
 }

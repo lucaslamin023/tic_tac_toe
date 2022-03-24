@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- BOOTSTRAP CSS -->
+    
     <link rel="stylesheet" href="style/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
@@ -14,55 +15,88 @@
 <body>
     <div class="main">
         <!-- GAME START SECTION -->
-        <section class="game-start container align-items-center justify-content-center hide">
-            <a class="logo" href="index.html">
-                <svg class="logo-icon">
-                    <use xlink:href="images/SVG/logo.svg#logo"></use>
-                </svg>
-            </a>
-            <h1>Jogo da velha</h1>
-            <div class="game-start-buttons">
-                <button id="vs-cpu" class="start-btn cyan-btn">
-                    Contra a CPU
-                </button>
-                <button id="vs-player" class="start-btn lime-btn">
-                    Contra um amigo
-                </button>
-            </div>
-        </section>
-        <!-- MARK SELECTION -->
-        <section class="mark-selection container align-items-center justify-content-center">
-            <a class="logo" href="index.html">
-                <svg class="logo-icon">
-                    <use xlink:href="images/SVG/logo.svg#logo"></use>
-                </svg>
-            </a>
-            <h1>Jogo da velha</h1>
-            <div class="game-start-choice align-items-center">
-                <div class="choice-header">
-                    <h4>Quem joga primeiro?</h4>
-                </div>
-                <div class="game-start-marks">
-                    <div id="x" class="game-start-x-mark">
-                        <svg class="x-mark-icon">
-                            <use xlink:href="images/SVG/icon-x-default.svg#icon-x-default"></use>
-                        </svg>
+        <section class="game-start container text-center p-5" id="start">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-10 col-sm-8 col-xs-4">
+                    <a class="logo" href="index.html">
+                        <img src="images/SVG/logo.svg" alt="XO">
+                    </a>
+                    <div class="game-start-choice container mt-2 p-4">
+                        <h1 class="mb-4">Quem joga primeiro?</h1>
+                        <div class="selection">
+                            <div class="game-start-marks container d-flex p-3">
+                                <div id="x-select" class="mark-select p-2">
+                                    <svg class="mark x-mark-icon">
+                                        <use xlink:href="images/SVG/icon-x-default.svg#icon-x-default"></use>
+                                    </svg>
+                                </div>
+                                <div id="o-select" class="mark-select p-2 selected">
+                                    <svg class="mark o-mark-icon selected">
+                                        <use xlink:href="images/SVG/icon-o-default.svg#icon-o-default"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div id="o" class="game-start-o-mark selected">
-                        <svg class="o-mark-icon">
-                            <use xlink:href="images/SVG/icon-o-default.svg#icon-o-default"></use>
-                        </svg>
+                    <div class="game-start-buttons container mt-3">
+                        <button id="vs-cpu" class="start-btn yellow-btn my-2">
+                            Contra a CPU
+                        </button>
+                        <button id="vs-player" class="start-btn blue-btn my-2">
+                            Contra um amigo
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- GAMEPLAY SECTION -->
-
-
+        <section class="game-board container hide" id="game">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-10 col-sm-8 col-xs-4">
+                    <div class="game-board-head d-flex align-items-center">
+                        <div class="logo">
+                            <img class="p-3" src="images/SVG/logo.svg" alt="XO">
+                        </div>
+                        <div class="game-board-turn d-flex align-items-center" id="game-turn">
+                            <svg class="mark-turn m-2">
+                                <use xlink:href="images/SVG/icon-x-default.svg#icon-x-default"></use>
+                            </svg>
+                            <h1>Turn</h1>
+                        </div>
+			            <div class="game-board-restart" id="restart-btn">
+                            <img src="images/SVG/icon-restart.svg" alt="restart" />
+                        </div>
+                    </div>
+                    <div class="main-game">
+                        <div class="row">
+                          <div class="cells d-flex">
+                            <div class="cell" id="0,2"></div>
+                            <div class="cell" id="1,2"></div>
+                            <div class="cell" id="2,2"></div>
+                          </div>
+                          <div class="cells d-flex">
+                            <div class="cell" id="0,1"></div>
+                            <div class="cell" id="1,1"></div>
+                            <div class="cell" id="2,1"></div>
+                          </div>
+                          <div class="cells d-flex">
+                            <div class="cell" id="0,0"></div>
+                            <div class="cell" id="1,0"></div>
+                            <div class="cell" id="2,0"></div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </section>
     </div>
     
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="js/jquery.js"></script>
 </body>
 </html>
